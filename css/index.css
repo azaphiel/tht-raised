@@ -1,0 +1,168 @@
+
+body {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: arial;
+  
+
+}
+canvas {
+    z-index: -1;
+    position: absolute;
+}
+
+.hat{
+  width: 200px;
+  height: 110px;
+  right: 0;
+  position: absolute;
+  bottom: 15%;
+}
+
+.banner{
+  width: 89%;
+  height: 150px;
+  top: 0;
+  background: url(../img/resized-150.png);
+  position: absolute;
+  margin-left: 180px;
+  background-repeat: repeat-x;
+}
+
+.sparkle{
+  width: 1500px;
+  height: 343px;
+  position: absolute;
+  background-repeat:repeat-x;
+  background: url(../img/sparkles.png);
+  top: 300px;
+  margin-left: 150px;
+  z-index: 1;
+
+}
+.outer {
+  width: 100%;
+  height: 386px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 300px;
+  text-align: center;
+}
+
+.inner {
+  bottom: 0;
+  height: 0%;
+  width: 100%;
+
+
+  position: absolute;
+}
+
+.inner h2 {
+  font-size: 500px;
+  margin-top: -95px;
+  background:  url(../img/color4.jpeg);
+  animation: animateMid 15s linear infinite;
+  -webkit-background-clip: text;
+  color: rgba(255, 255, 255, .1);
+
+
+}
+@keyframes animateMid {
+  0% {
+    background-position: left 800px top 0px;
+  }
+}
+
+
+p{
+  color: transparent;
+  font-size: 500px;
+  top: -95px;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 130%;
+  margin: 0;
+  position: absolute;
+  font-weight: bold;
+  background: gray;
+-webkit-background-clip: text;
+
+}
+
+.perc {
+  width: 100%;
+  height: auto;
+  margin-top: -90px;
+  font-weight:lighter;
+font-family:arial;
+  font-size: 110px;
+  text-align: center;
+  color: gray;
+}
+
+.logo {
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.qrCode {
+  padding: 10px;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+}
+.raised{
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0%;
+
+
+}
+
+.btn {
+  background-color: goldenrod;
+  border: none;
+  color: white;
+  padding: 16px 72px;
+  text-align: center;
+  font-size: 16px;
+  margin-top: -6%;
+  margin-left: 43.5%;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  position: absolute;
+  visibility: hidden;
+}
+
+.btn:hover {
+  color: black;
+  background-color: gold;
+}
+
+input[type=text] {
+  width: 4%;
+  padding: 18px;
+  box-sizing: border-box;
+  border: none;
+  background-color: goldenrod;
+  transition: 0.3s;
+  color: white;
+  font-weight: bolder;
+  position: absolute;
+  margin-top: -2%;
+  margin-left: 56%;
+}
+input[type=text]:hover {
+  color: black;
+  background-color: gold;
+}
