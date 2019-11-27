@@ -2,316 +2,219 @@
 <html lang="en">
 
 <head>
-    <title>Raised by You</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+  <title>Raised by You</title>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="js/matter.js"></script>
+  <script src="js/matter.js"></script>
 
 
 </head>
 
 <body>
-
-
-    <div class="banner"></div>
-    <div class="sparkle"></div>
-    <canvas id="canvas">Canvas is not supported in your browser.</canvas>
-    <script type="text/javascript" src="js/script.js">
-
-    <script>
-    /*function myFunc(){
-        var Engine = Matter.Engine,
-            Render = Matter.Render,
-            World = Matter.World,
-            Bodies = Matter.Bodies;
-        var engine = Engine.create();
-        var render = Render.create({
-            element: document.body,
-            engine: engine,
-            options: {
-                width: window.innerWidth,
-                height: window.innerHeight,
-                background: '#fff',
-                showAngleIndicator: false,
-                wireframes: false
-            }
-        });
-        var x = Math.floor(Math.random() * 1000) + 400;
-        var y= -100;
-
-        var boxA = Bodies.rectangle(x, y, 60, 60, {
-            friction: 0.1,
-            restitution: 0.1,
-            render: {
-                sprite: {
-                    texture: 'img/pink-box.png'
-                }
-            }
-        })
-        var boxB = Bodies.rectangle(x, y, 60, 60, {
-            friction: 0.1,
-            restitution: 0.1,
-            render: {
-                sprite: {
-                    texture: 'img/orange-box.png'
-                }
-            }
-        })
-        var boxC = Bodies.rectangle(x, y, 60, 60, {
-            friction: 0.1,
-            restitution: 0.1,
-            render: {
-                sprite: {
-                    texture: 'img/blue-box.png'
-                }
-            }
-        })
-        var boxD = Bodies.rectangle(x, y, 60, 60, {
-            friction: 0.1,
-            restitution: 0.1,
-            render: {
-                sprite: {
-                    texture: 'img/lgreen-box.png'
-                }
-            }
-        })
-        var boxE = Bodies.rectangle(x, y, 60, 60, {
-            friction: 0.1,
-            restitution: 0.1,
-            render: {
-                sprite: {
-                    texture: 'img/dorange-box.png'
-                }
-            }
-        })
-        var boxF = Bodies.rectangle(x, y, 60, 60, {
-            friction: 0.1,
-            restitution: 0.1,
-            render: {
-                sprite: {
-                    texture: 'img/dgreen-box.png'
-                }
-            }
-        })
-        var boxG = Bodies.rectangle(x, y, 60, 60, {
-            friction: 0.1,
-            restitution: 0.1,
-            render: {
-                sprite: {
-                    texture: 'img/dblue-box.png'
-                }
-            }
-        })
-        var groundColor = {
-            fillStyle: 'white',
-            strokeStyle: 'white',
-            lineWidth: 0
-        }
-
-
-
-        var ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight
-           + 50, window.innerWidth, 100, { isStatic: true, render: groundColor });
-
-        var giftAr = [boxA, boxB, boxC, boxD, boxE, boxF, boxG];
-        var giftNo = Math.floor(Math.random() * 6) + 0;
-
-        var myworld = World.add(engine.world, [giftAr[giftNo], ground]);
-
-        Engine.run(engine);
-        Render.run(render);
-}
-*/
-
-    </script>
-
-    <div class="skill">
-        <div class="outer">
-            <div class="inner" data-progress="100%" data-value="0">
-                <p id="demo2">€1000</p>
-                <h2 id="demo">€1000</h2>
-                <div></div>
-            </div>
-        </div>
-    </div>
-
-    <div class="perc">
-        <h5 id="here">0%</h5>
-    </div>
-
-    <img src="img/hat.png" class="hat" alt="hat">
-    <img src="img/tht-logo.png" class="logo" width="150px" height="150px" alt="logo">
-    <img src="img/qr.png" class="qrCode" width="160px" height="160px" alt="qr">
-    <img src="img/raised-c.png" class="raised" width="250px" height="auto" alt="logo">
-
-    <button class="btn" id="mybutton" onclick="buttonClickRef()"></button>
-
-    <script>
-
+  <script>
 
     var Engine = Matter.Engine,
-        Render = Matter.Render,
-        World = Matter.World,
-        Bodies = Matter.Bodies;
-    var engine = Engine.create();
-    var render = Render.create({
-        element: document.body,
-        engine: engine,
-        options: {
-            width: window.innerWidth,
-            height: window.innerHeight,
-            background: '#fff',
-            showAngleIndicator: false,
-            wireframes: false
-        }
+      Render = Matter.Render,
+      World = Matter.World,
+      Bodies = Matter.Bodies;
+  var engine = Engine.create();
+  var render = Render.create({
+    element: document.body,
+    engine: engine,
+    options: {
+      width: window.innerWidth,
+      height: window.innerHeight,
+      background: '#fff',
+      showAngleIndicator: false,
+      wireframes: false
+    }
+  });
+  var x = Math.floor(Math.random() * 1000) + 400;
+  var y = -100;
+
+  var boxA = Bodies.rectangle(x, y, 60, 60, {
+    friction: 0.1,
+    restitution: 0.1,
+    render: {
+      sprite: {
+        texture: 'img/pink-box.png'
+      }
+    }
+  })
+  var boxB = Bodies.rectangle(x, y, 60, 60, {
+    friction: 0.1,
+    restitution: 0.1,
+    render: {
+      sprite: {
+        texture: 'img/orange-box.png'
+      }
+    }
+  })
+  var boxC = Bodies.rectangle(x, y, 60, 60, {
+    friction: 0.1,
+    restitution: 0.1,
+    render: {
+      sprite: {
+        texture: 'img/blue-box.png'
+      }
+    }
+  })
+  var boxD = Bodies.rectangle(x, y, 60, 60, {
+    friction: 0.1,
+    restitution: 0.1,
+    render: {
+      sprite: {
+        texture: 'img/lgreen-box.png'
+      }
+    }
+  })
+  var boxE = Bodies.rectangle(x, y, 60, 60, {
+    friction: 0.1,
+    restitution: 0.1,
+    render: {
+      sprite: {
+        texture: 'img/dorange-box.png'
+      }
+    }
+  })
+  var boxF = Bodies.rectangle(x, y, 60, 60, {
+    friction: 0.1,
+    restitution: 0.1,
+    render: {
+      sprite: {
+        texture: 'img/dgreen-box.png'
+      }
+    }
+  })
+  var boxG = Bodies.rectangle(x, y, 60, 60, {
+    friction: 0.1,
+    restitution: 0.1,
+    render: {
+      sprite: {
+        texture: 'img/dblue-box.png'
+      }
+    }
+  })
+  var groundColor = {
+    fillStyle: 'white',
+    strokeStyle: 'white',
+    lineWidth: 0
+  }
+
+  function makeBox() {
+    var myworld = World.add(engine.world, [giftAr[giftNo], ground]);
+  }
+
+
+  var ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight +
+    50, window.innerWidth, 100, {
+      isStatic: true,
+      render: groundColor
     });
-    var x = Math.floor(Math.random() * 1000) + 400;
-    var y= -100;
 
-    var boxA = Bodies.rectangle(x, y, 60, 60, {
-        friction: 0.1,
-        restitution: 0.1,
-        render: {
-            sprite: {
-                texture: 'img/pink-box.png'
-            }
-        }
-    })
-    var boxB = Bodies.rectangle(x, y, 60, 60, {
-        friction: 0.1,
-        restitution: 0.1,
-        render: {
-            sprite: {
-                texture: 'img/orange-box.png'
-            }
-        }
-    })
-    var boxC = Bodies.rectangle(x, y, 60, 60, {
-        friction: 0.1,
-        restitution: 0.1,
-        render: {
-            sprite: {
-                texture: 'img/blue-box.png'
-            }
-        }
-    })
-    var boxD = Bodies.rectangle(x, y, 60, 60, {
-        friction: 0.1,
-        restitution: 0.1,
-        render: {
-            sprite: {
-                texture: 'img/lgreen-box.png'
-            }
-        }
-    })
-    var boxE = Bodies.rectangle(x, y, 60, 60, {
-        friction: 0.1,
-        restitution: 0.1,
-        render: {
-            sprite: {
-                texture: 'img/dorange-box.png'
-            }
-        }
-    })
-    var boxF = Bodies.rectangle(x, y, 60, 60, {
-        friction: 0.1,
-        restitution: 0.1,
-        render: {
-            sprite: {
-                texture: 'img/dgreen-box.png'
-            }
-        }
-    })
-    var boxG = Bodies.rectangle(x, y, 60, 60, {
-        friction: 0.1,
-        restitution: 0.1,
-        render: {
-            sprite: {
-                texture: 'img/dblue-box.png'
-            }
-        }
-    })
-    var groundColor = {
-        fillStyle: 'white',
-        strokeStyle: 'white',
-        lineWidth: 0
-    }
-
-    function makeBox(){
-      var myworld = World.add(engine.world, [giftAr[giftNo], ground]);
-    }
-
-    var ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight
-       + 50, window.innerWidth, 100, { isStatic: true, render: groundColor });
-
-    var giftAr = [boxA, boxB, boxC, boxD, boxE, boxF, boxG];
-    var giftNo = Math.floor(Math.random() * 6) + 0;
-    Engine.run(engine);
-    Render.run(render);
-
-        setInterval(function () { document.getElementById("mybutton").click(); }, 1000);
-        let money = null;
-        let total = null;
-        let counter = 0;
-
-        function buttonClickRef() {
-
-          fetch("https://api.raisedforyou.com/api/v1/sessions/B5F0D1/donations", {
-              method: 'GET'
-            })
-
-            .then(result => result.json())
-            .then(data => {
-              console.log(data[0].amount); total = 0;
-                for (var c = 0; c < data.length; c++) {
-                total += data[c].amount;}
-            })
-
-          var i = 0;
-          var perc = 0;
-
-          perc = Math.round((total / 100)+800);
-          //with button one manual inc
-          //perc += +document.getElementById("donation").value + (money/100);
-          document.getElementById('here').innerHTML = percentage(perc) + "%";
-          document.getElementById('demo2').style.height =
-            (125 - percentage(perc)) + "%";
+  var giftAr = [boxA, boxB, boxC, boxD, boxE, boxF, boxG];
+  var giftNo = Math.floor(Math.random() * 6) + 0;
+  Engine.run(engine);
+  Render.run(render);
 
 
+  var myworld = World.add(engine.world, [giftAr[giftNo], ground]);
+
+  Engine.run(engine);
+  Render.run(render);
+
+  </script>
+
+  <div class="banner"></div>
+  <div class="sparkle"></div>
+  <canvas id="canvas">Canvas is not supported in your browser.</canvas>
+  <script type="text/javascript" src="js/script.js"></script>
 
 
-          i = Math.round((total / 100)+1000);
-          //with button one manual inc
-          //i += +document.getElementById("donation").value+ (money/100);
-          document.getElementById('demo').innerHTML = "€" + i;
-          document.getElementById('demo2').innerHTML = "€" + i;
-        }
+  <div class="skill">
+    <div class="outer">
+      <div class="inner" data-progress="100%" data-value="0">
+        <p id="demo2">€1000</p>
+        <h2 id="demo">€1000</h2>
+        <div></div>
+      </div>
+    </div>
+  </div>
 
-        function percentage(per) {
-            return Math.round((100 / 1000) * per);
-        }
+  <div class="perc">
+    <h5 id="here">0%</h5>
+  </div>
 
-        $(document).ready(function () {
-            var skillBar = $('.inner');
-            var skillVal = skillBar.attr("data-progress");
-            $(skillBar).animate({
-                height: skillVal
-            }, 2100);
+  <img src="img/hat.png" class="hat" alt="hat">
+  <img src="img/tht-logo.png" class="logo" width="150px" height="150px" alt="logo">
+  <img src="img/qr.png" class="qrCode" width="160px" height="160px" alt="qr">
+  <img src="img/raised-c.png" class="raised" width="250px" height="auto" alt="logo">
 
+  <button class="btn" id="mybutton" onclick="buttonClickRef()"></button>
+
+  <script>
+
+
+    setInterval(function() {
+      document.getElementById("mybutton").click();
+    }, 1000);
+    let money = null;
+    let total = null;
+    let counter = 0;
+
+    function buttonClickRef() {
+
+      fetch("https://api.raisedforyou.com/api/v1/sessions/B5F0D1/donations", {
+          method: 'GET'
         })
 
+        .then(result => result.json())
+        .then(data => {
+          console.log(data[0].amount);
+          total = 0;
+          for (var c = 0; c < data.length; c++) {
+            total += data[c].amount;
+          }
+        })
+
+      var i = 0;
+      var perc = 0;
+
+      perc = Math.round((total / 100) + 800);
+      //with button one manual inc
+      //perc += +document.getElementById("donation").value + (money/100);
+      document.getElementById('here').innerHTML = percentage(perc) + "%";
+      document.getElementById('demo2').style.height =
+        (125 - percentage(perc)) + "%";
 
 
 
 
+      i = Math.round((total / 100) + 1000);
+      //with button one manual inc
+      //i += +document.getElementById("donation").value+ (money/100);
+      document.getElementById('demo').innerHTML = "€" + i;
+      document.getElementById('demo2').innerHTML = "€" + i;
+    }
 
+    function percentage(per) {
+      return Math.round((100 / 1000) * per);
+    }
 
-    </script>
+    $(document).ready(function() {
+      var skillBar = $('.inner');
+      var skillVal = skillBar.attr("data-progress");
+      $(skillBar).animate({
+        height: skillVal
+      }, 2100);
+
+    })
+  </script>
 
 
 </body>
