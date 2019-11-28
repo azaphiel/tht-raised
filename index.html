@@ -123,21 +123,24 @@
   Engine.run(engine);
   Render.run(render);
 
+  function callBox(rand){
+    myworld = World.add(engine.world, [giftAr[rand], ground]);
+  }
 
-   myworld = World.add(engine.world, [giftAr[giftNo], ground]);
+//if you dont call it wont bring box!
+  //callBox(giftNo);
 
 
-  Engine.run(engine);
-  Render.run(render);
+
+
+
+
 
   </script>
 
   <div class="banner"></div>
   <div class="sparkle"></div>
   <canvas id="canvas">Canvas is not supported in your browser.</canvas>
-
- <cript type="text/javascript" src="js/script.js"></script>
-
 
   <div class="skill">
     <div class="outer">
@@ -163,8 +166,6 @@
   <button class="btn" id="mybutton" onclick="buttonClickRef()"></button>
 
   <script>
-
-
 
     setInterval(function() {
       document.getElementById("mybutton").click();
@@ -213,7 +214,7 @@
       else {
         console.log("its not €1000 yet wait for fireworks!");
       }
-          function makeFireworks() {
+    function makeFireworks() {
             // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
             // not supported in all browsers though and sometimes needs a prefix, so we need a shim
             window.requestAnimFrame = ( function() {
@@ -498,9 +499,6 @@
       }, 2100);
 
     })
-
-
-
 
   </script>
 
