@@ -41,8 +41,9 @@ canvas {
   top: 300px;
   margin-left: 150px;
   z-index: 1;
-
 }
+
+
 .outer {
   width: 100%;
   height: 386px;
@@ -56,17 +57,17 @@ canvas {
   bottom: 0;
   height: 0%;
   width: 100%;
-
-
   position: absolute;
 }
 
 .inner h2 {
   font-size: 500px;
+  
   margin-top: -95px;
   background:  url(../img/color4.jpeg);
   animation: animateMid 15s linear infinite;
   -webkit-background-clip: text;
+  background-clip: text;
   color: rgba(255, 255, 255, .1);
 
 
@@ -85,18 +86,19 @@ p{
   left: 0;
   z-index: 1;
   width: 100%;
-  height: 130%;
+  
   margin: 0;
   position: absolute;
   font-weight: bold;
   background: gray;
 -webkit-background-clip: text;
+background-clip: text;
 
 }
 
 .perc {
   width: 100%;
-  height: auto;
+  
   margin-top: -90px;
   font-weight:lighter;
 font-family:arial;
