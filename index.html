@@ -35,10 +35,16 @@
       wireframes: false
     }
   });
-  var x = Math.floor(Math.random() * 1000) + 400;
+  var randA = Math.floor(Math.random() * 1000) + 400;
+  var randB = Math.floor(Math.random() * 1000) + 400;
+  var randC = Math.floor(Math.random() * 1000) + 400;
+  var randD = Math.floor(Math.random() * 1000) + 400;
+  var randE = Math.floor(Math.random() * 1000) + 400;
+  var randF = Math.floor(Math.random() * 1000) + 400;
+  var randG = Math.floor(Math.random() * 1000) + 400;
   var y = -100;
 
-  var boxA = Bodies.rectangle(x, y, 60, 60, {
+  var boxA = Bodies.rectangle(randA, y-10, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -47,7 +53,7 @@
       }
     }
   })
-  var boxB = Bodies.rectangle(x, y, 60, 60, {
+  var boxB = Bodies.rectangle(randB, y+10, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -56,7 +62,7 @@
       }
     }
   })
-  var boxC = Bodies.rectangle(x, y, 60, 60, {
+  var boxC = Bodies.rectangle(randC, y+100, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -65,7 +71,7 @@
       }
     }
   })
-  var boxD = Bodies.rectangle(x, y, 60, 60, {
+  var boxD = Bodies.rectangle(randD, y-100, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -74,7 +80,7 @@
       }
     }
   })
-  var boxE = Bodies.rectangle(x, y, 60, 60, {
+  var boxE = Bodies.rectangle(randE, y+123, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -83,7 +89,7 @@
       }
     }
   })
-  var boxF = Bodies.rectangle(x, y, 60, 60, {
+  var boxF = Bodies.rectangle(randF, y-123, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -92,7 +98,7 @@
       }
     }
   })
-  var boxG = Bodies.rectangle(x, y, 60, 60, {
+  var boxG = Bodies.rectangle(randG, y-222, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -128,7 +134,9 @@
   }
 
 //if you dont call it wont bring box!
-  callBox(giftNo);
+
+  
+  
 
 
 
