@@ -18,7 +18,7 @@ canvas {
 .hat{
   width: 200px;
   height: 110px;
-  right: 0;
+  right: 1%;
   position: absolute;
   bottom: 15%;
 }
@@ -118,7 +118,7 @@ font-family:arial;
 .qrCode {
   padding: 10px;
   position: absolute;
-  right: 0%;
+  right: 1%;
   bottom: 0%;
 }
 .raised{
