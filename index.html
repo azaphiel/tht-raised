@@ -18,6 +18,7 @@
 
 <body>
   <script>
+  
 
     var Engine = Matter.Engine,
       Render = Matter.Render,
@@ -25,26 +26,64 @@
       Bodies = Matter.Bodies;
   var engine = Engine.create();
   var render = Render.create({
-    element: document.body,
-    engine: engine,
-    options: {
-      width: window.innerWidth,
-      height: window.innerHeight,
-      background: '#fff',
-      showAngleIndicator: false,
-      wireframes: false
-    }
+        element: document.body,
+        engine: engine,
+        options: {
+          width: window.innerWidth,
+          height: window.innerHeight,
+          background: '#fff',
+          showAngleIndicator: false,
+          wireframes: false}
   });
-  var randA = Math.floor(Math.random() * 1000) + 400;
-  var randB = Math.floor(Math.random() * 1000) + 400;
-  var randC = Math.floor(Math.random() * 1000) + 400;
-  var randD = Math.floor(Math.random() * 1000) + 400;
-  var randE = Math.floor(Math.random() * 1000) + 400;
-  var randF = Math.floor(Math.random() * 1000) + 400;
-  var randG = Math.floor(Math.random() * 1000) + 400;
-  var y = -100;
+  
 
-  var boxA = Bodies.rectangle(randA, y-10, 50, 50, {
+
+  
+    let total1 = null;
+    let cnt = 0;
+    let preload = 1;
+    function statement() {
+      
+      //17AEDO is old one. Has money record inside. B5F0D1 is the new one = 0.
+      fetch("https://api.raisedforyou.com/api/v1/sessions/B5F0D1/donations", {
+          method: 'GET'
+        })
+
+        .then(result => result.json())
+        .then(data => {
+          
+          total1 = 0;
+
+          for (var c = 0; c < data.length; c++) {
+            total1 += data[c].amount; 
+
+            while (preload != 50){
+                giftBox();
+                preload++;
+              }
+              
+            while(cnt < data.length){
+              cnt++;
+              giftBox();     
+            }
+            
+            
+          }
+        })
+
+    }
+
+
+
+
+
+
+  function giftBox(){
+  let y = Math.floor(Math.random() * -500) + 0;
+  let randNo = Math.floor(Math.random() * 1200) + 200;
+  //console.log(randNo);
+
+  var boxA = Bodies.rectangle(randNo, y, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -53,7 +92,7 @@
       }
     }
   })
-  var boxB = Bodies.rectangle(randB, y+10, 50, 50, {
+  var boxB = Bodies.rectangle(randNo, y, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -62,7 +101,7 @@
       }
     }
   })
-  var boxC = Bodies.rectangle(randC, y+100, 50, 50, {
+  var boxC = Bodies.rectangle(randNo, y, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -71,7 +110,7 @@
       }
     }
   })
-  var boxD = Bodies.rectangle(randD, y-100, 50, 50, {
+  var boxD = Bodies.rectangle(randNo, y, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -80,7 +119,7 @@
       }
     }
   })
-  var boxE = Bodies.rectangle(randE, y+123, 50, 50, {
+  var boxE = Bodies.rectangle(randNo, y, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -89,7 +128,7 @@
       }
     }
   })
-  var boxF = Bodies.rectangle(randF, y-123, 50, 50, {
+  var boxF = Bodies.rectangle(randNo, y, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -98,7 +137,7 @@
       }
     }
   })
-  var boxG = Bodies.rectangle(randG, y-222, 50, 50, {
+  var boxG = Bodies.rectangle(randNo, y, 50, 50, {
     friction: 0.1,
     restitution: 0.1,
     render: {
@@ -113,11 +152,7 @@
     lineWidth: 0
   }
 
-  function makeBox() {
-    var myworld = World.add(engine.world, [giftAr[giftNo], ground]);
-  }
-
-
+  
   var ground = Bodies.rectangle(window.innerWidth / 2, window.innerHeight +
     50, window.innerWidth, 100, {
       isStatic: true,
@@ -126,23 +161,12 @@
 
   var giftAr = [boxA, boxB, boxC, boxD, boxE, boxF, boxG];
   var giftNo = Math.floor(Math.random() * 6) + 0;
+  var myworld = World.add(engine.world, [giftAr[giftNo], ground]);
+    
+  }
+ 
   Engine.run(engine);
   Render.run(render);
-
-  function callBox(rand){
-    myworld = World.add(engine.world, [giftAr[rand], ground]);
-  }
-
-//if you dont call it wont bring box!
-
-  
-  
-
-
-
-
-
-
 
   </script>
 
@@ -171,7 +195,7 @@
   <img src="img/raised-c.png" class="raised" width="250px" height="auto"
    alt="logo">
 
-  <button class="btn" id="mybutton" onclick="buttonClickRef()"></button>
+  <button class="btn" id="mybutton" onclick="buttonClickRef(), statement()"></button>
 
   <script>
 
@@ -183,6 +207,7 @@
     let counter = 0;
 
     function buttonClickRef() {
+      
       //17AEDO is old one. Has money record inside. B5F0D1 is the new one = 0.
       fetch("https://api.raisedforyou.com/api/v1/sessions/B5F0D1/donations", {
           method: 'GET'
@@ -190,7 +215,7 @@
 
         .then(result => result.json())
         .then(data => {
-          console.log(data[0].amount);
+          console.log("€" +(data[0].amount+29)/100 + " so far!");
           total = 0;
           for (var c = 0; c < data.length; c++) {
             total += data[c].amount;
@@ -208,7 +233,7 @@
       document.getElementById('demo2').style.height =
         (125 - percentage(perc)) + "%";
 
-
+        //if its to make it raise by money up:
       //i = Math.round((total / 100) + 1000);
       i =  1000;
       document.getElementById('demo').innerHTML = "€" + i;
