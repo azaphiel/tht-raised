@@ -17,9 +17,12 @@
 </head>
 
 <body>
+    
   <script>
   
+      
 
+  
     var Engine = Matter.Engine,
       Render = Matter.Render,
       World = Matter.World,
@@ -65,7 +68,10 @@
               
             while(cnt < data.length){
               cnt++;
-              giftBox();     
+              giftBox(); 
+              var audio = new Audio('Jingle.mp3');
+              audio.play();
+              
             }
             
             
@@ -73,10 +79,6 @@
         })
 
     }
-
-
-
-
 
 
   function giftBox(){
@@ -174,7 +176,7 @@
   <div class="banner"></div>
   <div class="sparkle"></div>
   <canvas id="canvas">Canvas is not supported in your browser.</canvas>
-
+  <span><h2>Help us throw a THT X-MAS Party!</h2></span>
   <div class="skill">
     <div class="outer">
       <div class="inner" data-progress="100%" data-value="0">
@@ -186,15 +188,13 @@
   </div>
 
   <div class="perc">
-    <h5 id="here">0%</h5>
-  </div>
-  <span class="middleText"><h3>Support THT xMas Party!</h3></span>
+    <h5 id="here">0%</h5><img src="img/raised-c.png" 
+    class="raised" width="300px" height="auto"alt="logo"></div>
   <img src="img/hat.png" class="hat" alt="hat">
   <img src="img/tht-logo.png" class="logo" width="150px" height="150px"
   alt="logo">
   <img src="img/qr.png" class="qrCode" width="160px" height="160px" alt="qr">
-  <img src="img/raised-c.png" class="raised" width="250px" height="auto"
-   alt="logo">
+  
 
   <button class="btn" id="mybutton" onclick="buttonClickRef(), statement()"></button>
 
@@ -216,11 +216,12 @@
 
         .then(result => result.json())
         .then(data => {
-          console.log("€" +(data[0].amount+29)/100 + " so far!");
+          
           total = 0;
           for (var c = 0; c < data.length; c++) {
             total += data[c].amount;
           }
+          console.log("€" +(total)/100 + " so far!");
         })
 
       var perc = 0;
@@ -230,9 +231,11 @@
       perc = Math.round((total / 100) + 500);
       //with button one manual inc
       //perc += +document.getElementById("donation").value + (money/100);
-      document.getElementById('here').innerHTML = percentage(perc) + "%";
-      document.getElementById('demo2').style.height =
-        (125 - percentage(perc)) + "%";
+
+      //removed percentage. activate if you want to use percentage down
+      //document.getElementById('here').innerHTML = percentage(perc) + "%";
+      document.getElementById('here').innerHTML = "€" + perc ;
+      document.getElementById('demo2').style.height =(125 - percentage(perc)) + "%";
 
         //if its to make it raise by money up:
       //i = Math.round((total / 100) + 1000);
