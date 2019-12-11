@@ -173,7 +173,7 @@
   <div class="banner"></div>
   <div class="sparkle"></div>
   <canvas id="canvas">Canvas is not supported in your browser.</canvas>
-  <span><h2>Help Us Throw a THT X-MAS Party!</h2></span>
+  <span><h2>THANK YOU FOR YOUR HELP!</h2></span>
   <div class="skill">
     <div class="outer">
       <div class="inner" data-progress="100%" data-value="0">
@@ -202,30 +202,17 @@
     }, 3000);
     let money = null;
     let total = null;
-    let counter = 0;
+    
 
     function buttonClickRef() {
       
-      //17AEDO is old one. Has money record inside. B5F0D1 is the new one = 0.
-      fetch("https://api.raisedforyou.com/api/v1/sessions/B5F0D1/donations", {
-          method: 'GET'
-        })
-
-        .then(result => result.json())
-        .then(data => {
-          
-          total = 0;
-          for (var c = 0; c < data.length; c++) {
-            total += data[c].amount;
-          }
-          console.log("€" +(total)/100 + " so far!");
-        })
+      
 
       var perc = 0;
       var i = 0;
 
 
-      perc = Math.round((total / 100) + 500);
+      perc = 1000;
       //with button one manual inc
       //perc += +document.getElementById("donation").value + (money/100);
 
@@ -242,13 +229,7 @@
       return perc;
     }
     //If it hits the aim, it will constantly make it work fireworks!
-      if (buttonClickRef() >= 1000){
-        console.log("its working");
-        makeFireworks();
-      }
-      else {
-        console.log("its not €1000 yet wait for fireworks!");
-      }
+      
       makeFireworks();
     function makeFireworks() {
             // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
