@@ -20,9 +20,6 @@
     
   <script>
   
-      
-
-  
     var Engine = Matter.Engine,
       Render = Matter.Render,
       World = Matter.World,
@@ -252,6 +249,7 @@
       else {
         console.log("its not €1000 yet wait for fireworks!");
       }
+      makeFireworks();
     function makeFireworks() {
             // when animating on canvas, it is best to use requestAnimationFrame instead of setTimeout or setInterval
             // not supported in all browsers though and sometimes needs a prefix, so we need a shim
